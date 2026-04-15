@@ -1,0 +1,62 @@
+@import "tailwindcss";
+@import "@fontsource/inter/index.css";
+@import "@fontsource/inter/700.css";
+
+@theme {
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-pixel: "Inter", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-[#70c5ce] text-slate-900 min-h-screen;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  /* Custom Scrollbar for Game Feel */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-black/10;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-black/30 border-2 border-transparent bg-clip-padding rounded-full hover:bg-black/50;
+  }
+}
+
+@layer components {
+  .pixel-border {
+    @apply border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)];
+  }
+  
+  .pixel-button {
+    @apply relative inline-flex items-center justify-center px-8 py-4 bg-[#e86100] text-white border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,0.3)] hover:bg-[#ff7a1a] hover:-translate-y-0.5 active:translate-y-1 active:shadow-[0px_0px_0px_0px_rgba(0,0,0,0.3)] transition-all cursor-pointer font-bold text-lg uppercase tracking-wider;
+  }
+
+  .pixel-card {
+    @apply bg-white border-4 border-black p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,0.1)] rounded-sm;
+  }
+}
+
+:root {
+    --background: oklch(1 0 0);
+    --foreground: oklch(0.145 0 0);
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.145 0 0);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.145 0 0);
+    --primary: oklch(0.205 0 0);
+    --primary-foreground: oklch(0.985 0 0);
+    --secondary: oklch(0.97 0 0);
+    --secondary-foreground: oklch(0.205 0 0);
+    --muted: oklch(0.97 0 0);
+    --muted-foreground: oklch(0.556 0 0);
+    --accent: oklch(0.97 0 0);
+    --accent-foreground: oklch(0.205 0 0);
+    --destructive: oklch(0.577 0.245 27.325);
+    --border: oklch(0.922 0 0);
+    --input: oklch(0.922 0 0);
+    --ring: oklch(0.708 0 0);
+    --radius: 0rem;
+}
