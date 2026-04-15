@@ -83,49 +83,49 @@ export default function ResultScreen({ playerName, stats, onReplay }: ResultScre
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
-          <div className="bg-slate-50 border-4 border-black p-6">
-            <p className="text-xs font-black text-slate-400 mb-3 uppercase tracking-widest">STRENGTHS</p>
+          <div className="bg-slate-900 border-4 border-slate-700 p-6">
+            <p className="text-xs font-black text-slate-500 mb-3 uppercase tracking-widest">STRENGTHS</p>
             <div className="space-y-2">
-              {profile.strengths.map(s => <p key={s} className="text-sm font-bold text-slate-700">{s}</p>)}
+              {profile.strengths.map(s => <p key={s} className="text-sm font-bold text-slate-300">{s}</p>)}
             </div>
           </div>
-          <div className="bg-slate-50 border-4 border-black p-6">
-            <p className="text-xs font-black text-slate-400 mb-3 uppercase tracking-widest">IMPROVEMENTS</p>
+          <div className="bg-slate-900 border-4 border-slate-700 p-6">
+            <p className="text-xs font-black text-slate-500 mb-3 uppercase tracking-widest">IMPROVEMENTS</p>
             <div className="space-y-2">
-              {profile.areas.map(a => <p key={a} className="text-sm font-bold text-slate-700">{a}</p>)}
+              {profile.areas.map(a => <p key={a} className="text-sm font-bold text-slate-300">{a}</p>)}
             </div>
           </div>
         </div>
 
         <div className="space-y-6 text-left">
-          <p className="text-xs font-black text-slate-400 text-center uppercase tracking-widest">FINAL SCORES</p>
+          <p className="text-xs font-black text-slate-500 text-center uppercase tracking-widest">FINAL SCORES</p>
           <div className="space-y-4">
             <div className="flex items-center gap-6">
-              <span className="text-sm font-bold w-24">SAFETY</span>
-              <div className="flex-1 h-6 bg-slate-200 border-4 border-black">
+              <span className="text-sm font-bold w-24 text-slate-300">SAFETY</span>
+              <div className="flex-1 h-6 bg-slate-800 border-4 border-slate-700">
                 <div className="h-full bg-blue-500 transition-all duration-1000" style={{ width: `${stats.meters.safety}%` }} />
               </div>
-              <span className="text-sm font-bold w-12 text-right">{stats.meters.safety}</span>
+              <span className="text-sm font-bold w-12 text-right text-blue-400">{stats.meters.safety}</span>
             </div>
             <div className="flex items-center gap-6">
-              <span className="text-sm font-bold w-24">TRUST</span>
-              <div className="flex-1 h-6 bg-slate-200 border-4 border-black">
+              <span className="text-sm font-bold w-24 text-slate-300">TRUST</span>
+              <div className="flex-1 h-6 bg-slate-800 border-4 border-slate-700">
                 <div className="h-full bg-red-500 transition-all duration-1000" style={{ width: `${stats.meters.trust}%` }} />
               </div>
-              <span className="text-sm font-bold w-12 text-right">{stats.meters.trust}</span>
+              <span className="text-sm font-bold w-12 text-right text-red-400">{stats.meters.trust}</span>
             </div>
             <div className="flex items-center gap-6">
-              <span className="text-sm font-bold w-24">GROWTH</span>
-              <div className="flex-1 h-6 bg-slate-200 border-4 border-black">
+              <span className="text-sm font-bold w-24 text-slate-300">GROWTH</span>
+              <div className="flex-1 h-6 bg-slate-800 border-4 border-slate-700">
                 <div className="h-full bg-green-500 transition-all duration-1000" style={{ width: `${stats.meters.growth}%` }} />
               </div>
-              <span className="text-sm font-bold w-12 text-right">{stats.meters.growth}</span>
+              <span className="text-sm font-bold w-12 text-right text-green-400">{stats.meters.growth}</span>
             </div>
           </div>
         </div>
 
-        <div className="bg-teal-50 border-4 border-teal-600 p-6 text-lg text-teal-900 italic font-medium leading-relaxed">
-          <span className="font-black mr-2">RECOMMENDATION:</span> {profile.rec}
+        <div className="bg-slate-900 border-4 border-orange-600 p-6 text-lg text-orange-400 italic font-medium leading-relaxed shadow-[inset_0_0_20px_rgba(249,115,22,0.1)]">
+          <span className="font-black mr-2 text-orange-500">RECOMMENDATION:</span> {profile.rec}
         </div>
 
         <div className="pt-4">

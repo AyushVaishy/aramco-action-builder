@@ -440,29 +440,29 @@ export default function SimulationScreen({ playerName, onComplete }: SimulationS
   return (
     <div className="flex min-h-screen flex-col p-4">
       {/* HUD */}
-      <div className="flex justify-between items-center bg-black/90 p-6 border-4 border-white text-white shadow-2xl">
+      <div className="flex justify-between items-center bg-slate-950 p-6 border-4 border-slate-800 text-white shadow-2xl">
         <div className="flex flex-col gap-3">
-          <div className="text-[#f7b500] font-bold text-sm tracking-widest">{currentLevel.name}: {currentLevel.label}</div>
+          <div className="text-orange-500 font-bold text-sm tracking-widest uppercase">{currentLevel.name}: {currentLevel.label}</div>
           <div className="flex items-center gap-3">
             <Shield className="h-5 w-5 text-blue-400" />
-            <div className="w-32 h-3 bg-slate-700 border border-white/20">
-              <div className="h-full bg-blue-400 transition-all duration-500" style={{ width: `${meters.safety}%` }} />
+            <div className="w-32 h-3 bg-slate-900 border border-slate-700">
+              <div className="h-full bg-blue-500 transition-all duration-500 shadow-[0_0_10px_rgba(59,130,246,0.5)]" style={{ width: `${meters.safety}%` }} />
             </div>
           </div>
           <div className="flex items-center gap-3">
             <Heart className="h-5 w-5 text-red-400" />
-            <div className="w-32 h-3 bg-slate-700 border border-white/20">
-              <div className="h-full bg-red-400 transition-all duration-500" style={{ width: `${meters.trust}%` }} />
+            <div className="w-32 h-3 bg-slate-900 border border-slate-700">
+              <div className="h-full bg-red-500 transition-all duration-500 shadow-[0_0_10px_rgba(239,68,68,0.5)]" style={{ width: `${meters.trust}%` }} />
             </div>
           </div>
         </div>
         <div className="text-center">
-          <p className="text-[#f7b500] text-xl font-bold">XP: {xp}</p>
-          <p className="text-xs opacity-70">STEP {currentScenarioIdx + 1}/{currentLevel.scenarios.length}</p>
+          <p className="text-orange-500 text-xl font-bold">XP: {xp}</p>
+          <p className="text-xs opacity-50 uppercase tracking-tighter">OPERATIONAL STEP {currentScenarioIdx + 1}/{currentLevel.scenarios.length}</p>
         </div>
-        <div className="flex items-center gap-3 bg-white/10 p-3 border-2 border-white/20">
-          <Clock className="h-6 w-6 text-white" />
-          <span className="text-2xl font-bold tabular-nums">{timeLeft}</span>
+        <div className="flex items-center gap-3 bg-slate-900 p-3 border-2 border-slate-800">
+          <Clock className="h-6 w-6 text-orange-500" />
+          <span className="text-2xl font-bold tabular-nums text-orange-500">{timeLeft}</span>
         </div>
       </div>
 
@@ -475,10 +475,10 @@ export default function SimulationScreen({ playerName, onComplete }: SimulationS
                 key={`${currentLevelIdx}-${currentScenarioIdx}-${idx}`}
                 initial={{ x: -20, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
-                className="pixel-card bg-white p-5 max-w-[90%] self-start relative"
+                className="pixel-card bg-slate-800 border-slate-600 p-5 max-w-[90%] self-start relative"
               >
-                <div className="absolute -left-2 top-4 w-4 h-4 bg-white border-l-4 border-b-4 border-black rotate-45" />
-                <p className="text-lg font-medium leading-relaxed">{msg}</p>
+                <div className="absolute -left-2 top-4 w-4 h-4 bg-slate-800 border-l-4 border-b-4 border-slate-600 rotate-45" />
+                <p className="text-lg font-medium leading-relaxed text-slate-100">{msg}</p>
               </motion.div>
             ))}
           </AnimatePresence>
@@ -487,10 +487,10 @@ export default function SimulationScreen({ playerName, onComplete }: SimulationS
             <motion.div
               initial={{ x: -20, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
-              className="pixel-card bg-teal-50 p-5 max-w-[90%] self-start border-teal-600 relative"
+              className="pixel-card bg-slate-900 p-5 max-w-[90%] self-start border-orange-600 relative"
             >
-              <div className="absolute -left-2 top-4 w-4 h-4 bg-teal-50 border-l-4 border-b-4 border-teal-600 rotate-45" />
-              <p className="text-lg font-bold leading-relaxed text-teal-800">{followUpText}</p>
+              <div className="absolute -left-2 top-4 w-4 h-4 bg-slate-900 border-l-4 border-b-4 border-orange-600 rotate-45" />
+              <p className="text-lg font-bold leading-relaxed text-orange-400">{followUpText}</p>
             </motion.div>
           )}
         </div>
@@ -504,19 +504,19 @@ export default function SimulationScreen({ playerName, onComplete }: SimulationS
               className="w-full max-w-lg space-y-6 pb-8"
             >
               <div className="flex items-center gap-4">
-                <div className="h-px flex-1 bg-white/30" />
-                <p className="text-xl font-bold text-center text-white drop-shadow-[2px_2px_0px_rgba(0,0,0,1)] uppercase tracking-widest">WHAT DO YOU DO?</p>
-                <div className="h-px flex-1 bg-white/30" />
+                <div className="h-px flex-1 bg-slate-700" />
+                <p className="text-xl font-bold text-center text-slate-400 drop-shadow-[2px_2px_0px_rgba(0,0,0,1)] uppercase tracking-widest">OPERATIONAL DECISION</p>
+                <div className="h-px flex-1 bg-slate-700" />
               </div>
               <div className="grid gap-4">
                 {scenario.options.map((option, i) => (
                   <Button
                     key={i}
                     onClick={() => handleDecision(option)}
-                    className="pixel-button h-auto py-5 px-6 text-left flex flex-col items-start gap-2"
-                    style={{ backgroundColor: i === 0 ? '#73bf2e' : i === 1 ? '#3498db' : '#e74c3c' }}
+                    className="pixel-button h-auto py-5 px-6 text-left flex flex-col items-start gap-2 border-slate-800"
+                    style={{ backgroundColor: i === 0 ? '#15803d' : i === 1 ? '#1d4ed8' : '#b91c1c' }}
                   >
-                    <span className="text-xs font-black uppercase tracking-widest bg-black/20 px-2 py-0.5 rounded-sm">{option.action}</span>
+                    <span className="text-xs font-black uppercase tracking-widest bg-black/40 px-2 py-0.5 rounded-none">{option.action}</span>
                     <span className="text-lg font-bold leading-tight">{option.label}</span>
                   </Button>
                 ))}

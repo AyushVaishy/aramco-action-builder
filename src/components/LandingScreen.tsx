@@ -31,12 +31,12 @@ export default function LandingScreen({ onStart }: LandingScreenProps) {
             animate={{ scale: 1, opacity: 1 }}
             className="relative"
           >
-            <h1 className="text-5xl md:text-7xl font-bold text-[#f7b500] drop-shadow-[6px_6px_0px_rgba(0,0,0,1)] tracking-tighter leading-none">
+            <h1 className="text-5xl md:text-7xl font-bold text-[#f97316] drop-shadow-[6px_6px_0px_rgba(0,0,0,0.8)] tracking-tighter leading-none">
               FEEDBACK<br />OPS
             </h1>
           </motion.div>
-          <p className="text-lg md:text-xl font-bold text-white drop-shadow-[2px_2px_0px_rgba(0,0,0,1)] uppercase tracking-[0.2em]">
-            CRITICAL RESPONSE
+          <p className="text-lg md:text-xl font-bold text-slate-400 drop-shadow-[2px_2px_0px_rgba(0,0,0,0.5)] uppercase tracking-[0.2em]">
+            INDUSTRIAL RESPONSE UNIT
           </p>
         </div>
 
@@ -44,10 +44,10 @@ export default function LandingScreen({ onStart }: LandingScreenProps) {
         <div className="space-y-8">
           <div className="relative">
             <Input
-              placeholder="ENTER YOUR NAME"
+              placeholder="OPERATOR ID / NAME"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="h-20 border-4 border-black bg-white text-center text-xl font-bold placeholder:text-slate-400 focus-visible:ring-0 rounded-none"
+              className="h-20 border-4 border-slate-700 bg-slate-900/80 text-white text-center text-xl font-bold placeholder:text-slate-600 focus-visible:ring-0 rounded-none"
             />
           </div>
 
@@ -56,7 +56,7 @@ export default function LandingScreen({ onStart }: LandingScreenProps) {
             disabled={!name.trim()}
             className="pixel-button h-20 w-full text-2xl disabled:opacity-50"
           >
-            START MISSION
+            INITIALIZE MISSION
           </Button>
         </div>
       </div>

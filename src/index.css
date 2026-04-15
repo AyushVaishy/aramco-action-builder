@@ -9,33 +9,38 @@
 
 @layer base {
   body {
-    @apply font-sans bg-[#70c5ce] text-slate-900 min-h-screen;
+    @apply font-sans bg-[#0f172a] text-slate-100 min-h-screen;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 
-  /* Custom Scrollbar for Game Feel */
+  /* Custom Scrollbar for Industrial Feel */
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 10px;
   }
   ::-webkit-scrollbar-track {
-    @apply bg-black/10;
+    @apply bg-slate-900;
   }
   ::-webkit-scrollbar-thumb {
-    @apply bg-black/30 border-2 border-transparent bg-clip-padding rounded-full hover:bg-black/50;
+    @apply bg-slate-700 border-2 border-slate-900 rounded-none hover:bg-slate-600;
   }
 }
 
 @layer components {
   .pixel-border {
-    @apply border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)];
+    @apply border-4 border-slate-800 shadow-[4px_4px_0px_0px_rgba(0,0,0,0.5)];
   }
   
   .pixel-button {
-    @apply relative inline-flex items-center justify-center px-8 py-4 bg-[#e86100] text-white border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,0.3)] hover:bg-[#ff7a1a] hover:-translate-y-0.5 active:translate-y-1 active:shadow-[0px_0px_0px_0px_rgba(0,0,0,0.3)] transition-all cursor-pointer font-bold text-lg uppercase tracking-wider;
+    @apply relative inline-flex items-center justify-center px-8 py-4 bg-[#f97316] text-white border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,0.4)] hover:bg-[#fb923c] hover:-translate-y-0.5 active:translate-y-1 active:shadow-[0px_0px_0px_0px_rgba(0,0,0,0.4)] transition-all cursor-pointer font-bold text-lg uppercase tracking-wider;
   }
 
   .pixel-card {
-    @apply bg-white border-4 border-black p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,0.1)] rounded-sm;
+    @apply bg-slate-900/90 border-4 border-slate-700 p-8 shadow-[12px_12px_0px_0px_rgba(0,0,0,0.3)] rounded-none backdrop-blur-sm;
+  }
+
+  .industrial-grid {
+    background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.05) 1px, transparent 0);
+    background-size: 40px 40px;
   }
 }
 

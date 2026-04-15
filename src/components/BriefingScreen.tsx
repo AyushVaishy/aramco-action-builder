@@ -24,46 +24,46 @@ export default function BriefingScreen({ playerName, onBegin }: BriefingScreenPr
       animate={{ opacity: 1 }}
       className="flex min-h-screen flex-col items-center justify-center p-6 overflow-y-auto"
     >
-      <div className="pixel-card w-full max-w-2xl space-y-8 my-8">
+      <div className="pixel-card w-full max-w-2xl space-y-8 my-8 bg-slate-900/90 border-slate-700">
         <div className="text-center space-y-4">
-          <h2 className="text-3xl font-bold text-slate-900 leading-relaxed">
-            READY, {playerName}?
+          <h2 className="text-3xl font-bold text-white leading-relaxed">
+            OPERATOR: {playerName}
           </h2>
-          <div className="h-1 w-full bg-black/10" />
+          <div className="h-1 w-full bg-slate-800" />
         </div>
 
         <div className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="p-4 border-2 border-black/10 bg-slate-50 text-center">
-              <ShieldAlert className="h-8 w-8 mx-auto mb-2 text-red-500" />
-              <p className="text-sm font-bold">PRESSURE RESPONSE</p>
+            <div className="p-4 border-2 border-slate-800 bg-slate-950 text-center">
+              <ShieldAlert className="h-8 w-8 mx-auto mb-2 text-orange-500" />
+              <p className="text-sm font-bold text-slate-300">PRESSURE RESPONSE</p>
             </div>
-            <div className="p-4 border-2 border-black/10 bg-slate-50 text-center">
+            <div className="p-4 border-2 border-slate-800 bg-slate-950 text-center">
               <Users className="h-8 w-8 mx-auto mb-2 text-blue-500" />
-              <p className="text-sm font-bold">TRUST IMPACT</p>
+              <p className="text-sm font-bold text-slate-300">TRUST IMPACT</p>
             </div>
-            <div className="p-4 border-2 border-black/10 bg-slate-50 text-center">
+            <div className="p-4 border-2 border-slate-800 bg-slate-950 text-center">
               <Target className="h-8 w-8 mx-auto mb-2 text-green-500" />
-              <p className="text-sm font-bold">CRITICAL DECISIONS</p>
+              <p className="text-sm font-bold text-slate-300">CRITICAL DECISIONS</p>
             </div>
           </div>
-          <p className="text-lg leading-relaxed text-slate-600 text-center">
-            YOUR DECISIONS IN THE FIELD WILL IMPACT SAFETY, TRUST, AND GROWTH. STAY FOCUSED.
+          <p className="text-lg leading-relaxed text-slate-400 text-center">
+            YOUR DECISIONS IN THE FIELD WILL IMPACT SAFETY, TRUST, AND GROWTH. STAY FOCUSED ON OPERATIONAL INTEGRITY.
           </p>
         </div>
 
-        <div className="flex items-center space-x-4 p-6 bg-slate-100 border-4 border-black">
+        <div className="flex items-center space-x-4 p-6 bg-slate-950 border-4 border-slate-800">
           <Checkbox 
             id="ready" 
             checked={isReady} 
             onCheckedChange={(checked) => setIsReady(checked as boolean)}
-            className="h-8 w-8 border-4 border-black data-[state=checked]:bg-green-500 rounded-none"
+            className="h-8 w-8 border-4 border-slate-700 data-[state=checked]:bg-orange-500 rounded-none"
           />
           <label 
             htmlFor="ready" 
-            className="text-xl font-bold text-slate-900 cursor-pointer select-none"
+            className="text-xl font-bold text-slate-200 cursor-pointer select-none"
           >
-            I AM READY TO BEGIN
+            CONFIRM READINESS
           </label>
         </div>
 
@@ -72,7 +72,7 @@ export default function BriefingScreen({ playerName, onBegin }: BriefingScreenPr
           disabled={!isReady}
           className="pixel-button h-20 w-full text-2xl disabled:opacity-50"
         >
-          START SIMULATION
+          BEGIN MISSION
         </Button>
       </div>
     </motion.div>
